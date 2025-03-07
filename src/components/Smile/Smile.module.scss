@@ -1,0 +1,64 @@
+.smile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #7e7b7b81;
+    border-radius: 10px;
+    padding: 50px;
+    gap: 20px;
+}
+
+.title {
+    text-align: center;
+    color: #5a3d66;
+    font-family: "Georgia", serif;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+    }
+}
+
+.romanticButton {
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    background: #ffccdd;
+    border: 2px solid #ff99bb;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #5a3d66;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        background: #ff99bb;
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        transform: scale(1.05);
+    }
+}
+
+.greetings {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #fff0f5;
+    border: 1px solid #ffccdd;
+    border-radius: 15px;
+    max-width: 800px;
+    width: 100%;
+
+    p {
+        margin: 0.8rem 0;
+        font-size: 1.1rem;
+        color: #5a3d66;
+        line-height: 1.5;
+    }
+}

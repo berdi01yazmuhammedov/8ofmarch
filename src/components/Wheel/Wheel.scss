@@ -1,0 +1,95 @@
+.wheel_container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .spinBtn {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.1em;
+    border: 4px solid rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    user-select: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      width: 20px;
+      height: 30px;
+      background-color: #fff;
+      clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
+    }
+  }
+
+  .wheel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 5px #333,
+      0 0 0 15px #fff,
+      0 0 0 18px #111;
+    transition: transform 3s ease-in-out;
+    position: relative;
+
+    .number {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--clr);
+      /* 
+        Задаём форму сектора (wedge) с углом 60°.
+        Центр колеса – 50% 50%.
+        Точки сектора:
+          - Вершина: 50% 50%
+          - Правая верхняя точка: 50% + 50%·cos(30°) ≈ 93.3%, 50% - 50%·sin(30°) = 25%
+          - Правая нижняя точка: 93.3%, 75%
+      */
+      clip-path: polygon(50% 50%, 93.3% 25%, 93.3% 75%);
+      transform-origin: 50% 50%;
+      /* Поворачиваем сектор на нужный угол: 
+         каждая переменная --i задаёт номер сектора (от 0 до 5 или 1 до 6).
+         Например, если задать --i: 0 для первого, --i: 1 для второго и т.д. */
+      transform: rotate(calc(60deg * var(--i)));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+
+      span {
+        /* Чтобы текст не поворачивался вместе с сектором, компенсируем вращение */
+        transform: rotate(calc(-60deg * var(--i)));
+        font-size: 2em;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
+
+        &::after {
+          content: "$";
+          position: absolute;
+          font-size: 0.75em;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

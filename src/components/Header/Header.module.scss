@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "Lovely";
+    src: url("../../assets//fonts/TT\ Lovelies\ Script.otf");
+}
+.header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #918e8e70;
+    border-radius: 15px;
+    .image {
+        width: 200px;
+        border-radius: 50%;
+        @media(max-width: 500px) {
+            width: 20%;
+        }
+    }
+    h1 {
+        font-family: "Lovely";
+        font-size: 50px;
+        color: #ffd341;
+        animation: fadeIn 2s ease-out;
+        text-align: center;
+        @media(max-width: 500px) {
+            font-size: 20px;
+        }
+    }
+    a {
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        span {
+            transition: font-size 0.3s ease-in-out;
+            font-size: 5px;
+        }
+        &:hover {
+            span {
+                font-size: 18px;
+            }
+        }
+        @media(max-width: 500px) {
+            padding: 5px 10px;
+        }
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
