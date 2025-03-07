@@ -1,4 +1,3 @@
-import React from 'react'
 import headerLogo from "../../assets/header-logo.jpg";
 import styles from "./Header.module.scss"
 import { Link } from 'react-router';

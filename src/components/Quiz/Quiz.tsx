@@ -103,10 +103,6 @@ const Quiz: React.FC = () => {
   const [showResult, setShowResult] = useState(false);
   const [resultSticker, setResultSticker] = useState<number>(-1);
 
-  const randomizeStickers = () => {
-    const randomSticker = Math.floor(Math.random() * STICKERS.length);
-    return randomSticker;
-  };
   const handleAnswer = (value: string) => {
     const newAnswers = [...answers, value];
     setAnswers(newAnswers);

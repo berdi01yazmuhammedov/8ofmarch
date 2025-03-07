@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from "./Backstage.module.scss";
 import screenshot from "../../assets/screenshot.jpg";
 import bant from "../../assets/videos/bant.mp4";
