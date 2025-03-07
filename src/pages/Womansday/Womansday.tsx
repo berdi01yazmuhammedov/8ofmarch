@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
+import{ useState, useEffect } from 'react';
 import ReactConfetti from 'react-confetti';
-import Card from '../../components/Card/Card';
 import styles from "./Womansday.module.scss";
 import Header from '../../components/Header/Header';
 import Quiz from '../../components/Quiz/Quiz';

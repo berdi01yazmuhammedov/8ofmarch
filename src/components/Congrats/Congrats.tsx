@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from "./Congrats.module.scss";
 import congrats from "../../assets/congrats.jpg";
 const Congrats = () => {
